@@ -212,6 +212,22 @@ setcolor(0);
 line(580,60,620,60);
 end;
 
+
+procedure oblako(x1,y1:integer);
+begin
+randomize;
+setcolor(15);
+setfillstyle(1,15);
+circle(x1,y1,15);
+floodfill(x1,y1,15);
+
+circle(x1+15,y1,8);
+floodfill(x1+16,y1,15);
+circle(x1-8,y1,12);
+floodfill(x1-8,y1,15);
+circle(x1-15,y1,8);
+floodfill(x1-18,y1,15);
+end;
 procedure dom;
 var a,b,c,d,e,i:integer;
 begin
@@ -262,6 +278,13 @@ setcolor(0);
 line(222+215,100,222+215,254);
 line(224+215,100,224+215,254);
 dver;
+randomize;
+oblako(40,40);
+oblako(80+random(11),50+random(11));
+oblako(130+random(11),30+random(11));
+oblako(170+random(11),60+random(11));
+oblako(150+random(11),10+random(11));
+
 end;
 var gr,gm,x,i:integer;
 begin
